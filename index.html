@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Cargar Imagen</title>
+</head>
+<body>
+    <h1>Cargar Imagen para Graficar</h1>
+    <form method="post" action="/upload" enctype="multipart/form-data">
+        <input type="file" name="file" accept="image/*" required>
+        <input type="submit" value="Cargar">
+    </form>
+    
+    {% if image_file %}
+        <h2>Imagen procesada:</h2>
+        <img src="{{ url_for('static', filename='uploads/output.png') }}" alt="Output Image">
+    {% endif %}
+</body>
+</html>
